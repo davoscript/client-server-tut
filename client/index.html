@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Appointment App</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <h1>Appointment App</h1>
+                <form>
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <select class="form-control" id="time">
+                            <option value="10">10:00 AM</option>
+                            <option value="11">11:00 AM</option>
+                            <option value="12">12:00 AM</option>
+                        </select>
+                    </div>
+            
+                    <button type="submit" class="btn btn-primary" id="submit">Request</button>
+            
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let submitBtn = document.getElementById('submit');
+        submitBtn.addEventListener('click', function(e){
+
+            // This prevents the default submition of the form
+            e.preventDefault(); 
+
+            // Get the form controls so we can get the values
+            let email = document.getElementById('email');
+            let time  = document.getElementById('time');
+
+            // Create a json with the data to be sent to the server (later)
+            let data = {
+                email: email.value,
+                time: time.value
+            }
+
+            // Print it, just to see if it works
+            console.log(data);
+
+        });
+    </script>
+    
+</body>
+</html>
